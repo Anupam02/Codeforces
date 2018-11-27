@@ -1,0 +1,18 @@
+import sys
+
+def main(*args, **kwargs):
+    sign = set({'+','-'})
+    current_members = set()
+    total_msg_chars = 0
+    for line in sys.stdin:
+        command = line.strip()
+        message = ''
+        if command[0] in sign:
+            current_members.add(command[1:])
+        else:
+            message = command.split(':')[1]
+            total_msg_chars += len(message)*len(current_members)
+    print total_msg_chars
+
+if __name__ == '__main__':
+    main()

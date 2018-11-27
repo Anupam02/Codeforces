@@ -1,0 +1,39 @@
+
+
+def main(*args, **kwargs):
+    input_str = raw_input()
+    pattern1 = raw_input()
+    pattern2 = raw_input()
+    
+    main_ptr = 0
+    pattern1_ptr = 0
+    pattern2_ptr = 0
+    is_forward = False
+    is_pattern1 = False
+    is_pattern2 = False
+    
+    while pattern1_ptr < len(pattern1) and main_ptr < len(input_str):
+        if pattern1[pattern1_ptr] == input_str[main_ptr] :
+            pattern1_ptr += 1
+        main_ptr += 1
+    
+    print main_ptr , pattern1_ptr
+    if pattern1_ptr == len(pattern1):
+        is_pattern1 = True
+    while pattern2_ptr < len(pattern2) and main_ptr < len(input_str):
+        if pattern2[pattern2_ptr] == input_str[main_ptr]:
+            pattern2_ptr += 1
+        main_ptr += 1
+    if pattern2_ptr == len(pattern2):
+        is_pattern2 = True
+
+     
+        
+    
+
+
+if __name__ == '__main__':
+    main()
+
+    
+    

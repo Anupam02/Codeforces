@@ -1,0 +1,15 @@
+import sys
+
+def main( *args, **kwargs):
+    chessboard = []
+    for line in sys.stdin:
+        chessboard.append( [ w for w in  filter( lambda x: x != '\n' ,line)
+ ])
+    print chessboard
+    count = 0
+    for x in xrange(len(chessboard)):
+        if all(lambda x == 'B' for x in chessboard[x]):
+            count += 1
+        if all(lambda x == 'B' for for x in chessboard[x][y] 
+if __name__ == '__main__':
+    main()
